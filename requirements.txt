@@ -1,0 +1,34 @@
+# Flask and Web Development
+Flask 
+Flask-SQLAlchemy 
+Flask-WTF 
+Flask-Login 
+Flask-Migrate 
+Flask-Cors 
+
+# YouTube Video Processing
+pytube 
+youtube-transcript-api 
+google-api-python-client 
+google-auth 
+google-auth-oauthlib 
+google-auth-httplib2 
+
+# Data Processing and Analysis
+pandas 
+numpy 
+
+# Machine Learning and NLP
+scikit-learn 
+nltk 
+textblob 
+transformers 
+torch 
+
+# Web Scraping and HTTP Requests
+requests 
+beautifulsoup4 
+
+# Utilities
+python-dotenv 
+tqdm 
