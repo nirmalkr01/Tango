@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tango - YouTube Analysis Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Tango Logo" class="logo">
+        </div>
+        <h1 class="app-name">Tango</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Analyze YouTube Posts</h2>
+            <p>Paste the YouTube link below to get a detailed analysis of the video.</p>
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/analyze" method="POST">
+                <input type="text" name="youtube_link" placeholder="Enter YouTube Link" required>
+                <button type="submit">Analyze</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tango. All rights reserved.</p>
+    </footer>
+</body>
+</html>

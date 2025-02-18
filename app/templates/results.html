@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results - Tango</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="Tango Logo" class="logo">
+        </div>
+        <h1 class="app-name">Tango</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Analysis Results</h2>
+            <div class="video-details">
+                <h3>{{ result.title }}</h3>
+                <p><strong>Published At:</strong> {{ result.published_at }}</p>
+                <p><strong>Views:</strong> {{ result.views }}</p>
+                <p><strong>Likes:</strong> {{ result.likes }}</p>
+                <p><strong>Description:</strong> {{ result.description }}</p>
+            </div>
+
+            <div class="transcript">
+                <h3>Video Transcript</h3>
+                <p>{{ result.transcript }}</p>
+            </div>
+
+            <div class="classification">
+                <h3>Video Classification</h3>
+                <p><strong>Jondra (Category):</strong> {{ result.jondra }}</p>
+                <p><strong>Fake/Real Analysis:</strong> {{ result.fake_real }}</p>
+            </div>
+
+            <div class="comments">
+                <h3>Top Comments</h3>
+                <ul>
+                    {% for comment in result.comments %}
+                    <li>
+                        <strong>{{ comment.author }}:</strong> {{ comment.text }} ({{ comment.likes }} likes)
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <a href="/" class="back-button">Analyze Another Video</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tango. All rights reserved.</p>
+    </footer>
+</body>
+</html>
